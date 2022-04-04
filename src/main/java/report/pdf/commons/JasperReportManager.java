@@ -26,19 +26,6 @@ public class JasperReportManager {
 
     private static final String JASPER = ".jasper";
 
-    /**
-     * @author <a href="mailto:4softwaredevelopers@gmail.com">Jordy Rodríguezr</a>
-     * @date 17 sep. 2021
-     * @description
-     * @HU_CU_REQ
-     * @param fileName
-     * @param tipoReporte
-     * @param params
-     * @param ds
-     * @return
-     * @throws JRException
-     * @throws IOException
-     */
     public ByteArrayOutputStream export(String fileName, String tipoReporte, Map<String, Object> params,
                                         Connection con) throws JRException, IOException {
 

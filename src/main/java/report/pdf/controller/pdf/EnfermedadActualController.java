@@ -3,6 +3,7 @@ package report.pdf.controller.pdf;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import report.pdf.models.pdf.EnfermedadActual;
 import report.pdf.services.EnfermedadActualService;
@@ -17,7 +18,7 @@ public class EnfermedadActualController {
     @Autowired
     private EnfermedadActualService enfermedadActualService;
 
-    @GetMapping("/lista")
+    @GetMapping(value="/lista", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<EnfermedadActual> listar(){
         return enfermedadActualService.findAll();
     }

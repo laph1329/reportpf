@@ -23,7 +23,7 @@ public class PdfReportServiceImpl implements PdfReportService {
     @Override
     public PdfReport obtenerReporte(Map<String, Object> params)
             throws JRException, IOException, SQLException {
-        String fileName="samuUnaFicha";
+        String fileName="samuUnaFicha2";
         PdfReport dto= new PdfReport();
         String extension = params.get("tipo").toString().equalsIgnoreCase(TipoReporteEnum.EXCEL.name()) ? ".xlsx"
                 : ".pdf";
