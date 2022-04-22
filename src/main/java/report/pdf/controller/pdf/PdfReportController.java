@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin
 @RequestMapping("/reporte")
 public class PdfReportController {
     @Autowired
@@ -79,6 +79,7 @@ public class PdfReportController {
         InputStream jasperStream = resource.getInputStream();
 
         JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
+        //final JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("reports" + File.separator + reportName + ".jasper"));
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource.getConnection());
 
         // Vista previa de PDF en línea

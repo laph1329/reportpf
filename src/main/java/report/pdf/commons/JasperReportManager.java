@@ -1,11 +1,8 @@
 package report.pdf.commons;
 
 
+import net.sf.jasperreports.engine.*;
 import report.pdf.enums.TipoReporteEnum;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
@@ -33,6 +30,7 @@ public class JasperReportManager {
         ClassPathResource resource = new ClassPathResource(REPORT_FOLDER + File.separator + fileName + JASPER);
 
         InputStream inputStream = resource.getInputStream();
+        //final JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/reports/"+fileName+JASPER));
         JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, params, con);
         if (tipoReporte.equalsIgnoreCase(TipoReporteEnum.EXCEL.toString())) {
             JRXlsxExporter exporter = new JRXlsxExporter();
